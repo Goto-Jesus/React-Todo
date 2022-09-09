@@ -1,0 +1,56 @@
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+}
+
+.modal-body{
+    width: 400px;
+    height: 200px;
+    padding: 2rem;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.buttonEdit{
+    background-color:coral;
+    color: white;
+    width: 22px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    box-shadow: 0 4px black;
+    text-shadow:
+    -1px 1px black,
+    -2px 1px black;
+    transition: 100ms;
+}
+
+.buttonEdit:hover{
+    background-color: rgb(251, 157, 123);
+    box-shadow: 0 7px black;
+    margin-bottom: 5px;
+}
+
+.buttonEdit:active{
+    margin-bottom: 0;
+    margin-top: 5px;
+    box-shadow: 0 1px black;
+    background-color: rgb(196, 91, 53);
+    color: rgb(189, 189, 189);
+}
+
+.buttonEdit div{
+    transform: rotateY(180deg);
+    position: relative;
+    top: -1px;
+    left: 1px;
+}

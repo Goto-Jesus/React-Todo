@@ -1,0 +1,54 @@
+.buttonClose{
+    background-color: crimson;
+    color: white;
+
+    width: 22px;
+    height: 20px;
+
+    border: 1px solid black;
+    border-radius: 4px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    box-shadow: 0 4px black;
+    text-shadow: 1px 1px black;
+
+    transition: .1s;
+}
+
+.buttonClose:hover{
+    background-color: rgb(221, 88, 114);
+    box-shadow: 0 7px black;
+    margin-bottom: 5px;
+}
+
+.buttonClose:active{
+    margin-bottom: 0;
+    margin-top: 5px;
+    box-shadow: 0 1px black;
+    background-color: rgb(175, 17, 49);
+    color: rgb(189, 189, 189);
+}
+
+
+.li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: .5rem;
+}
+
+.strong{
+    margin: 0 .5rem;
+}
+
+.div{
+    width: 46px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
