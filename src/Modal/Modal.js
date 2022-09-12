@@ -18,25 +18,26 @@ class Modal extends React.Component{
 
         return(
             <React.Fragment>
-                <button className="buttonEdit"
-                 onClick={()=>this.setState({isOpen:true})}><div>&#x270e;</div></button>{/* Open modal */}
+                <button style={{ width: '22px', height: '20px'}} className="buttonEdit"
+                        onClick={()=>this.setState({isOpen:true})}><div>&#x270e;</div>
+                </button>{/* Open modal */}
                 
                 {this.state.isOpen&&
-                <div className="modal">
-                    <div className="modal-body">
-                        <h1>Editor</h1>
-                        <p>{this.props.todo.id +". "+ this.props.todo.title}</p>
-                        <form>
-                            <input ref={inputCurrentValue}/>
-                            <button onClick={()=>{
-                                this.setState({isOpen:false})
-                                this.props.editTodo(editTodoElement(),this.props.todo.id)
-                            }}>Edit todo</button>
-                        </form>
-                        
-                        
+                    <div className="modal">
+                        <div className="modal-body">
+                            <h1>Editor</h1>
+                            <p>{this.props.todo.id +". "+ this.props.todo.title}</p>
+                            <form>
+                                <input ref={inputCurrentValue}/>
+                                <button onClick={()=>{
+                                    this.setState({isOpen:false})
+                                    this.props.editTodo(editTodoElement(),this.props.todo.id)
+                                }}>Edit todo</button>
+                            </form>
+                            
+                            
+                        </div>
                     </div>
-                </div>
                 }
                 
             </React.Fragment>

@@ -1,6 +1,7 @@
 import React,{ useState }  from "react";//10
 import PropTypes from 'prop-types'
-import { clear } from "@testing-library/user-event/dist/clear";
+import "./AddTodo.css"
+import Button from "../../Button/Button";
 
 // //10 Forma
 // const AddTodoWishState = ({onCreate}) =>{
@@ -51,9 +52,15 @@ const AddTodo = ({onCreate}) =>{
     }
 
     return(
-        <form onSubmit={submitHandler}>
-            <input {...input.bind} />
-            <button type="submit">Add todo</button>
+        <form onSubmit={submitHandler} className="formAddTodo">
+            <input {...input.bind} className="inputAddTodo" placeholder="new todo..."/>
+            <Button 
+                style={{
+                    backgroundColor:'rgb(72, 163, 99)',
+                    borderRadius:'0 5px 5px 0'}
+                    } 
+                type="submit" 
+                text="Add + todo"/>
         </form>
     );
 }

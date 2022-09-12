@@ -2,6 +2,8 @@ import React, {useEffect} from "react";
 import TodoList from "./Todo/TodoList/TodoList";
 import Context from "./context";
 import Loader from "./Loader/Loader";
+import Title from "./Title/Title";
+import NoTodos from "./Todo/NoTodos/NoTodos";
 
 // import AddTodo from "./Todo/AddTodo";
 const AddTodo = React.lazy(()=>import("./Todo/AddTodo/AddTodo"));
@@ -29,8 +31,8 @@ function App() {
   //   {id:3,completed:false,title:"Купить Кефир"}
   // ])
 
-  let [todos,setTodos] = React.useState([]);
-  const [loading,setLoading] = React.useState(true);
+  let [todos,setTodos] = React.useState([]);// массив обьектов заданий
+  const [loading,setLoading] = React.useState(true);// закрузка
 
   useEffect(()=>{
     // https://jsonplaceholder.typicode.com //типа база постов 
@@ -82,20 +84,17 @@ function App() {
       }]))
   }
 
-  //Мой метод
-
-
-  
   return (
     <Context.Provider value={{removeTodo}}>
       <div className="wrapper">
-        <h1>React-Todo</h1>
+        <Title />
         <React.Suspense fallback={<Loader/>}>
           <AddTodo onCreate={addTodo}/>
         </React.Suspense>
         {loading&&<Loader />}
         {/*если loading будет правда, то я показываю компонент <Loader />*/}
-        {todos.length?(<TodoList todos={todos} onToggle={toggleTodo} editTodo={editTodo}/>):(<p>No todos!</p>)}
+        {todos.length?(<TodoList todos={todos} onToggle={toggleTodo} editTodo={editTodo}/>):(<NoTodos/>)}
+        <hr/>
       </div>
     </Context.Provider>
   );
